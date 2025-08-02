@@ -1,0 +1,526 @@
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Globe, Users, Target, Award, CheckCircle, Mail, Sparkles, Zap, TrendingUp, Building } from "lucide-react"
+import Image from "next/image"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import ScrollReveal from "@/components/scroll-reveal"
+import FloatingElements from "@/components/floating-elements"
+
+export default function PartnershipsPage() {
+  const currentPartners = [
+    {
+      name: "UN Women Uganda",
+      type: "International Development",
+      description:
+        "Strategic partnership for women's economic empowerment programs, providing technical support and monitoring.",
+      logo: "/images/webImages/UN-Women-logo-blue-en.png",
+      partnership_since: "2019",
+      contribution: "Technical Support & Funding",
+      impact: "Program oversight and capacity building",
+      status: "Active",
+      color: "blue",
+    },
+    {
+      name: "Ministry of Agriculture, Animal Industry and Fisheries",
+      type: "Government Partner",
+      description:
+        "Government partnership providing policy support, technical guidance, and regulatory framework for aquaculture development.",
+      logo: "/images/webImages/maaif-logo.png",
+      partnership_since: "2019",
+      contribution: "Policy Support & Technical Guidance",
+      impact: "Regulatory compliance and sector development",
+      status: "Active",
+      color: "green",
+    },
+    {
+      name: "Swedish Embassy Uganda",
+      type: "Diplomatic Partner",
+      description:
+        "Diplomatic support and advocacy for women's empowerment initiatives in Uganda's aquaculture sector.",
+      logo: "/images/webImages/sweden-embassy-logo.png",
+      partnership_since: "2022",
+      contribution: "Diplomatic Support & Advocacy",
+      impact: "International visibility and networking",
+      status: "Active",
+      color: "yellow",
+    },
+    {
+      name: "Bugiri District Local Government",
+      type: "Local Government",
+      description:
+        "Local government partnership providing land access, community mobilization, and local administrative support.",
+      logo: "/images/webImages/bugiri-district-logo.png",
+      partnership_since: "2019",
+      contribution: "Land Access & Community Support",
+      impact: "Local integration and community acceptance",
+      status: "Active",
+      color: "teal",
+    },
+  ]
+
+  const partnershipOpportunities = [
+    {
+      title: "RAS System Development",
+      description:
+        "Partner with us to establish a land-based Recirculating Aquaculture System for year-round production",
+      investment: "$500K - $1M",
+      timeline: "18-24 months",
+      impact: "500+ additional women empowered",
+      type: "Infrastructure",
+      priority: "High",
+      icon: Zap,
+      color: "blue",
+    },
+    {
+      title: "Fish Processing Plant",
+      description: "Collaborate on building a modern fish processing facility for value addition and market access",
+      investment: "$300K - $500K",
+      timeline: "12-18 months",
+      impact: "3x profit margins, 200+ jobs",
+      type: "Value Addition",
+      priority: "High",
+      icon: Target,
+      color: "green",
+    },
+    {
+      title: "Innovation Hub",
+      description:
+        "Support the development of an aquaculture innovation and research center for technology advancement",
+      investment: "$200K - $400K",
+      timeline: "12-18 months",
+      impact: "Technology advancement, knowledge sharing",
+      type: "Innovation",
+      priority: "Medium",
+      icon: Sparkles,
+      color: "purple",
+    },
+    {
+      title: "Training Academy",
+      description: "Establish a comprehensive training academy for women in aquaculture and entrepreneurship",
+      investment: "$150K - $300K",
+      timeline: "8-12 months",
+      impact: "1,000+ women trained annually",
+      type: "Capacity Building",
+      priority: "Medium",
+      icon: Users,
+      color: "orange",
+    },
+    {
+      title: "Market Access Platform",
+      description: "Create digital platform connecting women farmers directly to regional and international markets",
+      investment: "$100K - $200K",
+      timeline: "6-12 months",
+      impact: "Direct market access, fair pricing",
+      type: "Technology",
+      priority: "Medium",
+      icon: TrendingUp,
+      color: "indigo",
+    },
+    {
+      title: "Sustainability Initiative",
+      description: "Implement eco-friendly practices and renewable energy solutions across all operations",
+      investment: "$75K - $150K",
+      timeline: "6-10 months",
+      impact: "Carbon neutral operations",
+      type: "Environmental",
+      priority: "Low",
+      icon: Globe,
+      color: "emerald",
+    },
+  ]
+
+  const partnershipBenefits = [
+    {
+      icon: Target,
+      title: "Measurable Impact",
+      description:
+        "Track your contribution's direct impact on women's lives and community development with detailed analytics",
+      color: "blue",
+      features: [
+        "Real-time impact tracking",
+        "Quarterly progress reports",
+        "Success story documentation",
+        "ROI measurement tools",
+      ],
+    },
+    {
+      icon: Globe,
+      title: "Sustainability Focus",
+      description:
+        "Align with UN SDGs and contribute to sustainable aquaculture practices that benefit the environment",
+      color: "green",
+      features: [
+        "SDG alignment certification",
+        "Environmental impact reports",
+        "Carbon footprint reduction",
+        "Sustainable practices",
+      ],
+    },
+    {
+      icon: Award,
+      title: "Recognition & Visibility",
+      description: "Gain recognition for your commitment to women's empowerment and corporate social responsibility",
+      color: "purple",
+      features: [
+        "Brand visibility campaigns",
+        "CSR recognition awards",
+        "Media coverage opportunities",
+        "Speaking engagements",
+      ],
+    },
+    {
+      icon: Building,
+      title: "Long-term Partnership",
+      description:
+        "Build lasting relationships with communities and see sustained impact over time through collaborative efforts",
+      color: "teal",
+      features: [
+        "Community relationships",
+        "Sustained impact metrics",
+        "Long-term collaboration",
+        "Legacy building programs",
+      ],
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      <FloatingElements />
+      <Navbar />
+
+      {/* Hero Section - Enhanced */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/02/Image_fx (5).jpg"
+            alt="WAIB Partnerships Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-blue-900/90 to-green-900/95" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </div>
+
+        {/* Floating Partnership Stats */}
+        <div className="absolute top-20 left-20 animate-float">
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold">4</div>
+            <div className="text-sm opacity-80">Active Partners</div>
+          </div>
+        </div>
+        <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: "1s" }}>
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold">6</div>
+            <div className="text-sm opacity-80">Opportunities</div>
+          </div>
+        </div>
+        <div className="absolute bottom-40 left-32 animate-float" style={{ animationDelay: "2s" }}>
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold">2019</div>
+            <div className="text-sm opacity-80">Since</div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-6xl mx-auto text-white">
+            <ScrollReveal>
+              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-8 py-4 text-lg font-semibold mb-8 rounded-full">
+                🤝 Strategic Partnerships
+              </Badge>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <h1 className="text-6xl lg:text-9xl font-serif font-bold mb-8 leading-tight">
+                Building Bridges,
+                <span className="block bg-gradient-to-r from-blue-300 via-purple-300 to-green-300 bg-clip-text text-transparent">
+                  Creating Impact
+                </span>
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal delay={400}>
+              <p className="text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto mb-12">
+                Discover our strategic partnerships and explore collaboration opportunities that create lasting impact for women's empowerment and sustainable development.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={600}>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-xl"
+                >
+                  <Users className="mr-3 h-6 w-6" />
+                  Become a Partner
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 bg-transparent text-xl"
+                >
+                  <Globe className="mr-3 h-6 w-6" />
+                  View Opportunities
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Partnership Tabs */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <Tabs defaultValue="current" className="w-full">
+            <div className="flex justify-center mb-16">
+              <TabsList className="grid w-full max-w-2xl grid-cols-3 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-2 shadow-lg">
+                <TabsTrigger
+                  value="current"
+                  className="rounded-xl font-medium data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+                >
+                  Current Partners
+                </TabsTrigger>
+                <TabsTrigger
+                  value="opportunities"
+                  className="rounded-xl font-medium data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+                >
+                  Opportunities
+                </TabsTrigger>
+                <TabsTrigger
+                  value="benefits"
+                  className="rounded-xl font-medium data-[state=active]:bg-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300"
+                >
+                  Benefits
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            {/* Current Partners */}
+            <TabsContent value="current" className="space-y-12">
+              <ScrollReveal>
+                <div className="text-center mb-16">
+                  <Badge className="bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 border-0 px-6 py-2 font-medium mb-6">
+                    Our Current Partners
+                  </Badge>
+                  <h2 className="font-serif font-bold text-3xl lg:text-4xl text-gray-900 mb-4">Valued Collaborators</h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Meet the organizations making our mission possible through strategic partnerships and shared vision
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <div className="space-y-8">
+                {currentPartners.map((partner, index) => (
+                  <ScrollReveal key={index} delay={index * 150}>
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-[1.01]" />
+                      <div className="relative grid lg:grid-cols-4 gap-6 p-8">
+                        <div className="flex flex-col justify-center items-center text-center bg-gradient-to-br from-gray-50/50 to-white/50 rounded-2xl p-6 backdrop-blur-sm">
+                          <div className="w-28 h-20 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                            <Image
+                              src={partner.logo || "/placeholder.svg"}
+                              alt={partner.name}
+                              width={100}
+                              height={60}
+                              className="object-contain"
+                            />
+                          </div>
+                          <h3 className="font-serif font-bold text-lg text-gray-900 mb-2 leading-tight">{partner.name}</h3>
+                          <Badge className={`bg-${partner.color}-100 text-${partner.color}-800 mb-3 font-medium`}>
+                            {partner.type}
+                          </Badge>
+                          <Badge className="bg-green-100 text-green-800 font-medium">{partner.status}</Badge>
+                        </div>
+
+                        <div className="lg:col-span-3 space-y-6">
+                          <p className="text-gray-600 leading-relaxed">{partner.description}</p>
+
+                          <div className="grid md:grid-cols-3 gap-4">
+                            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-100">
+                              <h4 className="font-serif font-semibold text-gray-900 mb-1 text-sm">Partnership Since</h4>
+                              <p className="text-gray-600 font-mono text-sm">{partner.partnership_since}</p>
+                            </div>
+                            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-100">
+                              <h4 className="font-serif font-semibold text-gray-900 mb-1 text-sm">Contribution</h4>
+                              <p className="text-gray-600 text-sm">{partner.contribution}</p>
+                            </div>
+                            <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-100">
+                              <h4 className="font-serif font-semibold text-gray-900 mb-1 text-sm">Impact</h4>
+                              <p className="text-gray-600 text-sm">{partner.impact}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Partnership Opportunities */}
+            <TabsContent value="opportunities" className="space-y-12">
+              <ScrollReveal>
+                <div className="text-center mb-16">
+                  <Badge className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border-0 px-6 py-2 font-medium mb-6">
+                    Partnership Opportunities
+                  </Badge>
+                  <h2 className="font-serif font-bold text-3xl lg:text-4xl text-gray-900 mb-4">Join Us in Creating Impact</h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explore diverse partnership opportunities that align with your organization's goals and values
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid lg:grid-cols-3 gap-6">
+                {partnershipOpportunities.map((opportunity, index) => (
+                  <ScrollReveal key={index} delay={index * 100} direction="up">
+                    <div className="relative group h-full">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 rounded-3xl shadow-lg group-hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1" />
+                      <div className="relative p-6 h-full flex flex-col">
+                        <div className="flex items-center justify-between mb-4">
+                          <div
+                            className={`w-12 h-12 bg-gradient-to-br from-${opportunity.color}-100 to-${opportunity.color}-200 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}
+                          >
+                            <opportunity.icon className={`h-6 w-6 text-${opportunity.color}-600`} />
+                          </div>
+                          <Badge
+                            className={`${
+                              opportunity.priority === "High"
+                                ? "bg-red-100 text-red-800"
+                                : opportunity.priority === "Medium"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-gray-100 text-gray-800"
+                            } font-medium text-xs`}
+                          >
+                            {opportunity.priority}
+                          </Badge>
+                        </div>
+
+                        <h3 className="font-serif font-bold text-xl text-gray-900 mb-3 leading-tight">{opportunity.title}</h3>
+                        <p className="text-gray-600 mb-4 leading-relaxed flex-grow text-sm">
+                          {opportunity.description}
+                        </p>
+
+                        <div className="space-y-3 mb-6">
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-gray-900 text-sm">Investment</span>
+                            <span className="font-mono text-gray-600 text-sm">{opportunity.investment}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-gray-900 text-sm">Timeline</span>
+                            <span className="text-gray-600 text-sm">{opportunity.timeline}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium text-gray-900 text-sm">Impact</span>
+                            <span className="text-gray-600 text-sm">{opportunity.impact}</span>
+                          </div>
+                        </div>
+
+                        <Button
+                          className={`w-full bg-gradient-to-r from-${opportunity.color}-600 to-${opportunity.color}-700 hover:from-${opportunity.color}-700 hover:to-${opportunity.color}-800 text-white rounded-full font-medium group transition-all duration-300 hover:scale-105`}
+                        >
+                          <Mail className="mr-2 h-4 w-4" />
+                          Express Interest
+                        </Button>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Partnership Benefits */}
+            <TabsContent value="benefits" className="space-y-12">
+              <ScrollReveal>
+                <div className="text-center mb-16">
+                  <Badge className="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 border-0 px-6 py-2 font-medium mb-6">
+                    Partnership Benefits
+                  </Badge>
+                  <h2 className="font-serif font-bold text-3xl lg:text-4xl text-gray-900 mb-4">Why Partner with WAIB?</h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discover the unique value and benefits of collaborating with our organization
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {partnershipBenefits.map((benefit, index) => (
+                  <ScrollReveal key={index} delay={index * 200} direction="up">
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 rounded-3xl shadow-lg group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105" />
+                      <div className="relative p-8">
+                        <div
+                          className={`w-16 h-16 bg-gradient-to-br from-${benefit.color}-100 to-${benefit.color}-200 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+                        >
+                          <benefit.icon className={`h-8 w-8 text-${benefit.color}-600`} />
+                        </div>
+                        <h3 className="font-serif font-bold text-2xl text-gray-900 mb-4">{benefit.title}</h3>
+                        <p className="text-gray-600 mb-6 leading-relaxed">{benefit.description}</p>
+                        <div className="space-y-2">
+                          {benefit.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-center space-x-3">
+                              <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                              <span className="text-gray-600 text-sm">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Creative Call to Action */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="text-center text-white max-w-4xl mx-auto">
+              <h2 className="font-serif font-bold text-3xl lg:text-4xl mb-6">Ready to Partner with Us?</h2>
+              <p className="text-lg mb-10 leading-relaxed opacity-90">
+                Join our network of partners committed to transforming women's lives through sustainable aquaculture.
+                Let's create lasting impact together and build a better future for communities.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-white text-slate-900 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
+                >
+                  <Users className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Become a Partner
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Contact Partnership Team
+                </Button>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}

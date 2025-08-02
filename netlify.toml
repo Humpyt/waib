@@ -1,0 +1,20 @@
+[build]
+  publish = "out"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  NEXT_PUBLIC_SITE_URL = "https://waib.netlify.app"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_SITE_URL = "https://deploy-preview-$DEPLOY_ID--waib.netlify.app"
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_SITE_URL = "https://$BRANCH--waib.netlify.app"
