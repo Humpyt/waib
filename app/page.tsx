@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Fish, Users, Award, TrendingUp, Heart, Globe, Waves, Target, Star, ArrowUp, Sparkles } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import HeroSlider from "@/components/hero-slider"
@@ -88,66 +89,60 @@ export default function HomePage() {
               },
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={stat.delay} direction="up">
-                <div className="relative group">
-                  {/* Background with gradient and glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-gray-50 rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105" />
+                <div className="relative group perspective-1000">
+                  {/* Card container with 3D effect */}
+                  <div className="relative bg-white rounded-2xl shadow-lg transition-all duration-500 transform group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:rotate-y-5">
+                    {/* Glowing background effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Animated border gradient */}
+                    <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-br from-transparent via-gray-200 to-transparent opacity-50 group-hover:opacity-100 group-hover:animate-gradient-rotate" />
 
-                  {/* Colored accent border */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br from-${stat.color}-500 to-${stat.color}-600 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                  />
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-${stat.color}-500 to-${stat.color}-600 rounded-t-3xl`}
-                  />
-
-                  <div className="relative p-8 text-center">
-                    {/* Icon with enhanced styling */}
-                    <div className="relative mb-6">
-                      <div
-                        className={`w-24 h-24 bg-gradient-to-br from-${stat.color}-100 to-${stat.color}-200 rounded-3xl flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}
-                      >
-                        <stat.icon className={`h-12 w-12 text-${stat.color}-600`} />
+                    <div className="relative p-6">
+                      {/* Header with icon */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br from-${stat.color}-50 to-${stat.color}-100 p-[1px] overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
+                          <div className={`w-full h-full rounded-2xl bg-white flex items-center justify-center relative z-10`}>
+                            <stat.icon className={`h-10 w-10 text-${stat.color}-500 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12`} />
+                          </div>
+                          {/* Animated background gradient */}
+                          <div className={`absolute inset-0 bg-gradient-to-br from-${stat.color}-400 to-${stat.color}-600 opacity-20 group-hover:opacity-30 transition-opacity duration-500 animate-gradient-move`} />
+                        </div>
+                        
+                        {/* Trend indicator with enhanced styling */}
+                        <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-${stat.color}-50 group-hover:bg-${stat.color}-100 transition-colors duration-300`}>
+                          <ArrowUp className={`h-3.5 w-3.5 text-${stat.color}-500`} />
+                          <span className={`text-sm font-semibold text-${stat.color}-700`}>{stat.trend}</span>
+                        </div>
                       </div>
-                      {/* Floating sparkle effect */}
-                      <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <Sparkles className={`h-6 w-6 text-${stat.color}-400 animate-pulse`} />
+
+                      {/* Main counter with enhanced typography */}
+                      <div className="mb-4">
+                        <div className={`text-4xl font-bold bg-gradient-to-r from-${stat.color}-600 to-${stat.color}-500 bg-clip-text text-transparent tracking-tight group-hover:scale-105 transform transition-transform duration-500`}>
+                          <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mt-2 leading-tight">{stat.label}</h3>
                       </div>
-                    </div>
 
-                    {/* Main counter */}
-                    <div className={`text-4xl lg:text-5xl font-bold text-${stat.color}-600 mb-3`}>
-                      <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                    </div>
-
-                    {/* Label */}
-                    <h3 className="text-lg font-serif font-semibold text-gray-900 mb-2">{stat.label}</h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 mb-4">{stat.description}</p>
-
-                    {/* Trend indicator */}
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className={`flex items-center space-x-1 px-3 py-1 bg-${stat.color}-50 rounded-full`}>
-                        <ArrowUp className={`h-3 w-3 text-${stat.color}-600`} />
-                        <span className={`text-xs font-medium text-${stat.color}-700`}>{stat.trend}</span>
-                      </div>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">{stat.period}</p>
-
-                    {/* Animated progress bar */}
-                    <div className="mt-4">
-                      <div className="w-full bg-gray-200 rounded-full h-1">
-                        <div
-                          className={`h-1 bg-gradient-to-r from-${stat.color}-500 to-${stat.color}-600 rounded-full transition-all duration-1000 delay-${stat.delay}`}
-                          style={{ width: "85%" }}
-                        />
+                      {/* Description with improved layout */}
+                      <div className="space-y-3">
+                        <p className="text-sm text-gray-600 leading-relaxed">{stat.description}</p>
+                        <div className="flex items-center gap-2">
+                          <div className={`h-1.5 flex-grow rounded-full bg-gray-100 overflow-hidden`}>
+                            <div
+                              className={`h-full bg-gradient-to-r from-${stat.color}-500 to-${stat.color}-400 transform origin-left scale-x-0 animate-grow-width`}
+                              style={{ animationDelay: `${stat.delay}ms` }}
+                            />
+                          </div>
+                          <span className="text-xs text-gray-500 font-medium">{stat.period}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Hover glow effect */}
                   <div
-                    className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-${stat.color}-400 to-${stat.color}-600 blur-xl -z-10`}
+                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-${stat.color}-400 to-${stat.color}-600 blur-xl -z-10`}
                   />
                 </div>
               </ScrollReveal>
@@ -242,10 +237,14 @@ export default function HomePage() {
                   </GlassCard>
                 </div>
 
-                <Button className="btn-modern group">
-                  Learn More About Us
-                  <Target className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+                <Link href="/about">
+                  <Button className="btn-modern group" asChild>
+                    <span className="flex items-center">
+                      Learn More About Us
+                      <Target className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Button>
+                </Link>
               </div>
             </ScrollReveal>
           </div>
@@ -253,8 +252,34 @@ export default function HomePage() {
       </section>
 
       {/* Programs & Initiatives */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-4">
+      <section className="py-32 relative overflow-hidden">
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-8 left-20 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+        </div>
+
+        {/* Floating fish patterns */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 transform -rotate-12 opacity-10">
+            <Fish className="w-24 h-24 text-blue-500 animate-float" />
+          </div>
+          <div className="absolute top-40 right-20 transform rotate-45 opacity-10">
+            <Fish className="w-16 h-16 text-green-500 animate-float animation-delay-1000" />
+          </div>
+          <div className="absolute bottom-20 left-1/4 transform -rotate-90 opacity-10">
+            <Fish className="w-20 h-20 text-teal-500 animate-float animation-delay-2000" />
+          </div>
+        </div>
+
+        {/* Water wave effect */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 opacity-10">
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-blue-500/20 to-transparent animate-wave" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-green-500/20 to-transparent animate-wave animation-delay-1000" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-20">
               <Badge className="bg-gradient-to-r from-green-100 to-teal-100 text-green-800 border-0 px-6 py-2 text-sm font-semibold mb-6">
@@ -306,12 +331,15 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">{program.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{program.description}</p>
-                  <Button
-                    variant="outline"
-                    className="w-full bg-transparent border-gray-200 hover:bg-white/50 hover:border-gray-300 group-hover:scale-105 transition-all duration-300"
-                  >
-                    Learn More
-                  </Button>
+                  <Link href="/programs">
+                    <Button
+                      variant="outline"
+                      className="w-full bg-transparent border-gray-200 hover:bg-white/50 hover:border-gray-300 group-hover:scale-105 transition-all duration-300"
+                      asChild
+                    >
+                      <span>Learn More</span>
+                    </Button>
+                  </Link>
                 </GlassCard>
               </ScrollReveal>
             ))}

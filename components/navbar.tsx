@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <Image
-                src="/images/waib-logo.png"
+                src="/images/waib logo2.png"
                 alt="WAIB Logo"
                 width={60}
                 height={45}

@@ -148,6 +148,16 @@ export default function HeroSlider() {
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+              {/* WAIB Logo */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10">
+                <Image
+                  src="/images/waib logo2.png"
+                  alt="WAIB Logo"
+                  width={400}
+                  height={400}
+                  className="w-auto h-auto max-h-[60vh] object-contain"
+                />
+              </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
@@ -214,24 +224,6 @@ export default function HeroSlider() {
                         </Button>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Logo/Visual Element */}
-                  <div className="relative animate-fade-in-right" style={{ animationDelay: "1.4s" }}>
-                    <div className="relative z-10">
-                      <Image
-                        src="/images/waib-logo.png"
-                        alt="WAIB Logo"
-                        width={500}
-                        height={375}
-                        className="mx-auto drop-shadow-2xl"
-                      />
-                    </div>
-                    {/* Glassmorphism Background */}
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-3xl scale-110 opacity-50" />
-                    {/* Animated Rings */}
-                    <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping" />
-                    <div className="absolute inset-0 rounded-full border border-white/10 animate-pulse" />
                   </div>
                 </div>
               </div>

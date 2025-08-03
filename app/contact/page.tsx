@@ -22,73 +22,73 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <label className="block font-bold text-gray-900 mb-3 text-lg">First Name *</label>
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="space-y-2">
+          <label className="block text-sm font-medium text-gray-700">First Name *</label>
           <Input
             required
             placeholder="Your first name"
-            className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 py-4 text-lg"
+            className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
           />
         </div>
-        <div>
-          <label className="block font-bold text-gray-900 mb-3 text-lg">Last Name *</label>
+        <div className="space-y-2">
+          <label className="block text-sm font-medium text-gray-700">Last Name *</label>
           <Input
             required
             placeholder="Your last name"
-            className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 py-4 text-lg"
+            className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
           />
         </div>
       </div>
 
-      <div>
-        <label className="block font-bold text-gray-900 mb-3 text-lg">Email Address *</label>
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-gray-700">Email Address *</label>
         <Input
           type="email"
           required
           placeholder="your.email@example.com"
-          className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 py-4 text-lg"
+          className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
         />
       </div>
 
-      <div>
-        <label className="block font-bold text-gray-900 mb-3 text-lg">Organization (Optional)</label>
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-gray-700">Organization (Optional)</label>
         <Input
           placeholder="Your organization name"
-          className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 py-4 text-lg"
+          className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
         />
       </div>
 
-      <div>
-        <label className="block font-bold text-gray-900 mb-3 text-lg">Subject *</label>
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-gray-700">Subject *</label>
         <Input
           required
           placeholder="What is this regarding?"
-          className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 py-4 text-lg"
+          className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
         />
       </div>
 
-      <div>
-        <label className="block font-bold text-gray-900 mb-3 text-lg">Message *</label>
+      <div className="space-y-2">
+        <label className="block text-sm font-medium text-gray-700">Message *</label>
         <Textarea
           required
           placeholder="Tell us more about your inquiry or how you'd like to get involved..."
-          rows={6}
-          className="rounded-2xl border-gray-200 focus:border-emerald-500 focus:ring-emerald-500 text-lg"
+          rows={4}
+          className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 resize-none text-sm sm:text-base"
         />
       </div>
 
       <Button
         type="submit"
-        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-6 rounded-2xl font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
+        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 group text-sm sm:text-base"
       >
-        <Send className="mr-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
+        <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
         Send Message
       </Button>
 
-      <div className="text-center p-6 bg-emerald-50 rounded-2xl">
-        <p className="text-emerald-700 font-semibold">
+      <div className="text-center p-3 sm:p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+        <p className="text-emerald-700 text-xs sm:text-sm font-medium">
           ⚡ Quick Response Guarantee: We respond within 24 hours!
         </p>
       </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
         alert("Please call us during business hours or send us an email to schedule a call.")
         break
       case "Call Now":
-        window.location.href = "tel:+256XXXXXXXXX"
+        window.location.href = "tel:+2560772609297"
         break
       default:
         break
@@ -145,7 +145,7 @@ export default function ContactPage() {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our team",
-      details: ["+256 XXX XXX XXX", "Available during business hours", "Emergency contact available"],
+      details: ["+256(0)772-609-297", "Available during business hours", "Emergency contact available"],
       color: "orange",
       action: "Call Now",
     },
@@ -159,27 +159,6 @@ export default function ContactPage() {
       color: "blue",
       href: "/partnerships",
     },
-    {
-      icon: Heart,
-      title: "Support Our Work",
-      description: "Make a donation or sponsor a program",
-      color: "red",
-      href: "/support",
-    },
-    {
-      icon: Zap,
-      title: "Volunteer With Us",
-      description: "Join our mission as a volunteer",
-      color: "green",
-      href: "/volunteer",
-    },
-    {
-      icon: Globe,
-      title: "Media & Press",
-      description: "Press inquiries and media resources",
-      color: "purple",
-      href: "/media",
-    },
   ]
 
   return (
@@ -187,8 +166,8 @@ export default function ContactPage() {
       <FloatingElements />
       <Navbar />
 
-      {/* Hero Section - Compact */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Elegant */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/02/Image_fx (2).jpg"
@@ -197,28 +176,35 @@ export default function ContactPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/95 via-teal-900/90 to-blue-900/95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-teal-900/85 to-blue-900/90" />
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto text-white">
+          <div className="text-center max-w-4xl mx-auto text-white">
             <ScrollReveal>
-              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-4 py-2 text-sm font-medium mb-4 rounded-full">
-                💬 Get in Touch
-              </Badge>
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 mb-6">
+                <div className="w-2 h-2 bg-emerald-300 rounded-full mr-2 animate-pulse"></div>
+                <span className="text-sm font-medium text-emerald-100">Get in Touch</span>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <h1 className="text-3xl lg:text-4xl font-serif font-bold mb-4 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
                 Let's Connect &
-                <span className="block bg-gradient-to-r from-emerald-300 via-teal-300 to-blue-300 bg-clip-text text-transparent">
-                  Create Change
+                <span className="block bg-gradient-to-r from-emerald-300 via-teal-300 to-blue-300 bg-clip-text text-transparent mt-2">
+                  Create Change Together
                 </span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <p className="text-lg text-emerald-100 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-emerald-50 leading-relaxed max-w-3xl mx-auto">
                 Ready to partner with us, support our mission, or learn more about our transformative programs? We'd love to hear from you and explore how we can work together.
               </p>
             </ScrollReveal>
@@ -226,50 +212,49 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Overview */}
-      <section className="py-32 relative">
+      {/* Contact Methods */}
+      <section className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="text-center mb-20">
-              <Badge className="bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 border-0 px-6 py-2 text-sm font-semibold mb-6">
-                📞 Contact Methods
-              </Badge>
-              <h2 className="text-6xl font-serif font-bold text-gray-900 mb-6">
-                Multiple Ways to
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-emerald-50 px-4 py-2 rounded-full mb-6">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+                <span className="text-emerald-700 font-medium text-sm">Contact Methods</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+                Get in Touch
                 <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                  Connect With Us
+                  With Our Team
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Choose the most convenient way to get in touch with our team and start your journey with WAIB.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose the most convenient way to connect with us and start your journey with WAIB.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contactMethods.map((method, index) => (
-              <ScrollReveal key={index} delay={index * 150} direction="up">
-                <div className="relative group h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105" />
-                  <div className="relative p-8 text-center h-full flex flex-col">
-                    <div
-                      className={`w-20 h-20 bg-gradient-to-br from-${method.color}-100 to-${method.color}-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
-                    >
-                      <method.icon className={`h-10 w-10 text-${method.color}-600`} />
+              <ScrollReveal key={index} delay={index * 100} direction="up">
+                <div className="group relative bg-white rounded-2xl border border-gray-100 p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 h-full">
+                  <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-bl-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-md">
+                      <method.icon className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-600 group-hover:rotate-6 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3">{method.title}</h3>
-                    <p className="text-gray-600 mb-6">{method.description}</p>
-                    <div className="space-y-3 mb-8 flex-grow">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">{method.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">{method.description}</p>
+                    <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-6">
                       {method.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-center justify-center space-x-2">
-                          <div className={`w-2 h-2 bg-${method.color}-500 rounded-full`} />
-                          <span className="text-gray-600 text-sm font-medium">{detail}</span>
+                        <div key={idx} className="flex items-start space-x-2 group-hover:translate-x-1 transition-transform duration-300">
+                          <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0 group-hover:animate-pulse"></div>
+                          <span className="text-gray-600 text-xs sm:text-sm">{detail}</span>
                         </div>
                       ))}
                     </div>
                     <Button
                       onClick={() => handleContactAction(method.action)}
-                      className={`w-full bg-gradient-to-r from-${method.color}-600 to-${method.color}-700 hover:from-${method.color}-700 hover:to-${method.color}-800 text-white rounded-2xl py-4 font-semibold text-lg group transition-all duration-300 hover:scale-105`}
+                      className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-all duration-300 hover:shadow-md hover:scale-[1.02] group-hover:shadow-lg"
                     >
                       {method.action}
                     </Button>
@@ -278,155 +263,37 @@ export default function ContactPage() {
               </ScrollReveal>
             ))}
           </div>
-
-          {/* Enhanced Contact Form and Info */}
-          <div className="grid lg:grid-cols-2 gap-20">
-            {/* Contact Form - Enhanced */}
-            <ScrollReveal direction="left">
-              <div id="contact-form" className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-emerald-50 rounded-3xl shadow-2xl group-hover:shadow-2xl transition-all duration-500" />
-                <div className="relative p-12">
-                  <div className="mb-8">
-                    <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <MessageCircle className="h-10 w-10 text-emerald-600" />
-                    </div>
-                    <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">Send Us a Message</h3>
-                    <p className="text-xl text-gray-600 leading-relaxed">
-                      Fill out the form below and we'll get back to you within 24 hours.
-                    </p>
-                  </div>
-
-                  <ContactForm />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Quick Actions */}
-            <ScrollReveal direction="right" delay={200}>
-              <div className="space-y-8">
-                <div>
-                  <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-4 py-2 font-medium mb-6">
-                    Quick Actions
-                  </Badge>
-                  <h3 className="font-serif font-bold text-2xl text-gray-900 mb-4">Other Ways to Get Involved</h3>
-                  <p className="text-gray-600 mb-8">
-                    Explore different ways to support our mission and connect with our community
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  {quickActions.map((action, index) => (
-                    <div key={index} className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 rounded-2xl shadow-md group-hover:shadow-lg transition-all duration-300" />
-                      <div className="relative p-6 flex items-center space-x-4">
-                        <div
-                          className={`w-12 h-12 bg-gradient-to-br from-${action.color}-100 to-${action.color}-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                        >
-                          <action.icon className={`h-6 w-6 text-${action.color}-600`} />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-serif font-semibold text-gray-900 mb-1">{action.title}</h4>
-                          <p className="text-gray-600 text-sm">{action.description}</p>
-                        </div>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className={`border-${action.color}-200 text-${action.color}-600 hover:bg-${action.color}-50 rounded-full font-medium`}
-                          asChild
-                        >
-                          <Link href={action.href}>Learn More</Link>
-                        </Button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
-      {/* Enhanced Partnership & Support Links */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50/80 to-blue-50/80" />
-        <div className="container mx-auto px-4 relative">
+      {/* Contact Form Section */}
+      <section className="py-20 md:py-28 relative bg-gradient-to-br from-white to-emerald-50">
+        <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-6 py-2 font-medium mb-6">
-                Get Involved
-              </Badge>
-              <h2 className="font-serif font-bold text-3xl lg:text-4xl text-gray-900 mb-4">More Ways to Support Our Mission</h2>
+              <div className="inline-flex items-center bg-emerald-50 px-4 py-2 rounded-full mb-6">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+                <span className="text-emerald-700 font-medium text-sm">Send a Message</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+                Get in Touch
+                <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                  With Our Team
+                </span>
+              </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Explore different ways to support our mission and make a lasting impact
+                Fill out the form below and we'll get back to you within 24 hours.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <ScrollReveal delay={200} direction="left">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50/50 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 border border-blue-100/50" />
-                <div className="relative p-10 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <Building className="h-10 w-10 text-blue-600" />
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal direction="up">
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden group">
+                <div className="p-1 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:shadow-lg transition-all duration-500">
+                  <div className="bg-white rounded-xl p-8 md:p-12 group-hover:shadow-inner transition-all duration-500">
+                    <ContactForm />
                   </div>
-                  <h3 className="font-serif font-bold text-2xl text-gray-900 mb-4">Partner with Us</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Explore strategic partnerships, corporate collaborations, and long-term alliances that create
-                    sustainable impact for women in aquaculture.
-                  </p>
-                  <div className="space-y-2 mb-8">
-                    {["Strategic partnerships", "Corporate sponsorships", "Technical collaborations"].map(
-                      (item, idx) => (
-                        <div key={idx} className="flex items-center justify-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                          <span className="text-sm text-gray-600">{item}</span>
-                        </div>
-                      ),
-                    )}
-                  </div>
-                  <Button
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full py-3 font-semibold group transition-all duration-300 hover:scale-105"
-                    asChild
-                  >
-                    <Link href="/partnerships">
-                      <Globe className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
-                      Explore Partnerships
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={400} direction="right">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-red-50/50 rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500 border border-red-100/50" />
-                <div className="relative p-10 text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <Heart className="h-10 w-10 text-red-600" />
-                  </div>
-                  <h3 className="font-serif font-bold text-2xl text-gray-900 mb-4">Support Our Work</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Make a direct impact through donations, sponsorships, and support for specific programs that empower
-                    women through aquaculture.
-                  </p>
-                  <div className="space-y-2 mb-8">
-                    {["One-time donations", "Monthly giving programs", "Project sponsorships"].map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full" />
-                        <span className="text-sm text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full py-3 font-semibold group transition-all duration-300 hover:scale-105"
-                    asChild
-                  >
-                    <Link href="/support">
-                      <Heart className="mr-2 h-4 w-4 group-hover:animate-pulse" />
-                      Make a Donation
-                    </Link>
-                  </Button>
                 </div>
               </div>
             </ScrollReveal>
@@ -434,82 +301,91 @@ export default function ContactPage() {
         </div>
       </section>
 
+
       {/* Location & Visit Information */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-50/50 to-emerald-50/50" />
-        <div className="container mx-auto px-4 relative">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <section className="py-20 md:py-28 relative bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-teal-50 px-4 py-2 rounded-full mb-6">
+                <div className="w-2 h-2 bg-teal-500 rounded-full mr-2"></div>
+                <span className="text-teal-700 font-medium text-sm">Visit Us</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+                Our Location
+                <span className="block bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                  Wakawaka Landing Site
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Come see our transformative work in action at our headquarters on the shores of Lake Victoria in Bugiri District, Uganda.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-                <Image
-                  src="/images/02/Image_fx (3).jpg"
-                  alt="WAIB Location"
-                  width={700}
-                  height={600}
-                  className="rounded-3xl shadow-2xl relative z-10 group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute -bottom-8 -right-8 z-20">
-                  <div className="bg-white rounded-2xl shadow-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-teal-600">📍</div>
-                    <div className="text-sm text-gray-600 font-medium">Visit Us</div>
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src="/images/02/Image_fx (3).jpg"
+                    alt="WAIB Location"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                      <span className="text-teal-800 font-medium">Visit Our Location</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={200}>
-              <div className="space-y-8">
-                <div>
-                  <Badge className="bg-gradient-to-r from-teal-100 to-emerald-100 text-teal-800 border-0 px-4 py-2 mb-6">
-                    🗺️ Our Location
-                  </Badge>
-                  <h2 className="text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-                    Visit Us at
-                    <span className="block bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-                      Wakawaka Landing Site
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                    Come see our transformative work in action at our headquarters on the shores of Lake Victoria in Bugiri District, Uganda.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     { icon: MapPin, title: "Address", detail: "Wakawaka Landing Site, Bulidha Sub County, Bugiri District, Uganda" },
                     { icon: Clock, title: "Operating Hours", detail: "Monday - Friday: 8:00 AM - 5:00 PM, Saturday: 8:00 AM - 12:00 PM" },
-                    { icon: Phone, title: "Phone", detail: "+256 XXX XXX XXX (Available during business hours)" },
-                    { icon: Mail, title: "Email", detail: "weebultd@gmail.com (24-48 hour response time)" },
+                    { icon: Phone, title: "Phone", detail: "+256(0)772-609-297" },
+                    { icon: Mail, title: "Email", detail: "weebultd@gmail.com" },
                   ].map((info, index) => (
-                    <div key={index} className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                      <div className="w-14 h-14 bg-gradient-to-br from-teal-100 to-emerald-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <info.icon className="h-7 w-7 text-teal-600" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h4>
-                        <p className="text-gray-600 leading-relaxed">{info.detail}</p>
+                    <div key={index} className="bg-gray-50 rounded-xl p-5 border border-gray-100 hover:shadow-md transition-all duration-300 hover:border-teal-200 group hover:-translate-y-1">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-teal-200 transition-colors duration-300 group-hover:scale-110 group-hover:rotate-6">
+                          <info.icon className="h-5 w-5 text-teal-600 group-hover:animate-pulse" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-teal-700 transition-colors duration-300">{info.title}</h4>
+                          <p className="text-sm text-gray-600">{info.detail}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    onClick={() => handleContactAction("Get Directions")}
-                    className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
-                  >
-                    <MapPin className="mr-2 h-5 w-5 group-hover:bounce" />
-                    Get Directions
-                  </Button>
-                  <Button
-                    onClick={() => handleContactAction("Schedule Call")}
-                    variant="outline"
-                    className="border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105"
-                  >
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Schedule Visit
-                  </Button>
+                <div className="pt-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      onClick={() => handleContactAction("Get Directions")}
+                      className="flex-1 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-md"
+                    >
+                      <MapPin className="mr-2 h-4 w-4" />
+                      Get Directions
+                    </Button>
+                    <Button
+                      onClick={() => handleContactAction("Schedule Call")}
+                      variant="outline"
+                      className="flex-1 border-teal-200 text-teal-700 hover:bg-teal-50 py-3 rounded-xl transition-all duration-300"
+                    >
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Visit
+                    </Button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -517,68 +393,62 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Enhanced Call to Action */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/02/image (3).png"
-            alt="Contact WAIB"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/95 via-teal-800/90 to-blue-800/95" />
+      {/* Call to Action */}
+      <section className="py-20 md:py-28 relative bg-gradient-to-br from-emerald-600 to-teal-600 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         </div>
-
-        {/* Animated Background Elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-emerald-400/20 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-teal-400/20 rounded-full blur-xl animate-pulse" />
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
-            <div className="text-center text-white max-w-6xl mx-auto">
-              <h2 className="text-7xl font-serif font-bold mb-8">
+            <div className="text-center text-white max-w-4xl mx-auto">
+              <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                <span className="text-sm font-medium">Join Our Mission</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
                 Ready to Make
-                <span className="block bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent">
-                  a Difference?
-                </span>
+                <span className="block text-white">a Difference?</span>
               </h2>
-              <p className="text-2xl mb-16 leading-relaxed opacity-90">
+              
+              <p className="text-lg md:text-xl text-emerald-50 mb-10 max-w-2xl mx-auto">
                 Whether you're interested in partnerships, support opportunities, or simply want to learn more about our work, we're here to help you get involved in transforming lives.
               </p>
 
-              <div className="grid md:grid-cols-4 gap-8 mb-16">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
                 {[
                   { icon: Users, title: "Partner", description: "Strategic collaboration" },
                   { icon: Heart, title: "Support", description: "Fund our programs" },
                   { icon: Zap, title: "Volunteer", description: "Join our mission" },
                   { icon: Globe, title: "Visit", description: "See our work" },
                 ].map((action, index) => (
-                  <div key={index} className="group">
-                    <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                      <action.icon className="h-10 w-10 text-white" />
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <action.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{action.title}</h3>
-                    <p className="text-emerald-100 text-sm">{action.description}</p>
+                    <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">{action.title}</h3>
+                    <p className="text-xs text-emerald-100">{action.description}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button
-                  size="lg"
                   onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white text-emerald-600 hover:bg-gray-100 px-12 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group text-xl"
+                  className="bg-white text-emerald-600 hover:bg-gray-100 px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg text-sm sm:text-base"
                 >
-                  <MessageCircle className="mr-3 h-6 w-6 group-hover:rotate-12" />
+                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Start Conversation
                 </Button>
                 <Button
-                  size="lg"
                   variant="outline"
                   onClick={() => handleContactAction("Call Now")}
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 bg-transparent text-xl"
+                  className="border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl transition-all duration-300 text-sm sm:text-base"
                 >
-                  <Phone className="mr-3 h-6 w-6" />
+                  <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Call Us Now
                 </Button>
               </div>

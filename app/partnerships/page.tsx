@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import ScrollReveal from "@/components/scroll-reveal"
 import FloatingElements from "@/components/floating-elements"
+import Link from "next/link"
 
 export default function PartnershipsPage() {
   const currentPartners = [
@@ -306,14 +307,19 @@ export default function PartnershipsPage() {
                 Let's create lasting impact together and build a better future for communities.
               </p>
               <div className="flex justify-center">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contact Partnership Team
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
+                    asChild
+                  >
+                    <span className="flex items-center">
+                      <Mail className="mr-2 h-5 w-5" />
+                      Contact Partnership Team
+                    </span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </ScrollReveal>

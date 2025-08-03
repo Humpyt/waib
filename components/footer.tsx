@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Fish, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Fish, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Users, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Image
-                src="/images/waib-logo.png"
+                src="/images/waib logo2.png"
                 alt="WAIB Logo"
                 width={60}
                 height={45}
@@ -89,23 +89,63 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <a href="tel:+2560772609297" className="text-gray-300 hover:text-white transition-colors">
+                  +256(0)772-609-297
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
                 <Fish className="h-5 w-5 text-green-400" />
                 <span className="text-gray-300">waibug.com</span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Quick Impact Stats */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
-            <p className="text-gray-300 mb-4">Subscribe to our newsletter for updates on our programs and impact.</p>
-            <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
-              />
-              <Button className="w-full bg-green-600 hover:bg-green-700">Subscribe</Button>
+            <h3 className="text-lg font-semibold mb-6">Our Impact at a Glance</h3>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-blue-900/50 to-green-900/50 rounded-lg p-4 border border-gray-700">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-300 text-sm">Women Empowered</p>
+                    <p className="text-2xl font-bold text-green-400">1,400+</p>
+                  </div>
+                  <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center">
+                    <Users className="h-5 w-5 text-green-400" />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-blue-900/50 to-green-900/50 rounded-lg p-4 border border-gray-700">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-300 text-sm">Fish Production</p>
+                    <p className="text-2xl font-bold text-blue-400">394.44 Tons</p>
+                  </div>
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Fish className="h-5 w-5 text-blue-400" />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-blue-900/50 to-green-900/50 rounded-lg p-4 border border-gray-700">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-300 text-sm">Years of Impact</p>
+                    <p className="text-2xl font-bold text-purple-400">5+</p>
+                  </div>
+                  <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center">
+                    <Award className="h-5 w-5 text-purple-400" />
+                  </div>
+                </div>
+              </div>
+              
+              <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-2">
+                View Full Impact Report
+              </Button>
             </div>
           </div>
         </div>

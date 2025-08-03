@@ -480,74 +480,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <ScrollReveal direction="left">
-              <div className="space-y-8">
-                <div>
-                  <Badge className="bg-gradient-to-r from-blue-100 to-green-100 text-blue-800 border-0 px-4 py-2 mb-6">
-                    📍 Get in Touch
-                  </Badge>
-                  <h2 className="text-5xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-                    Connect With
-                    <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                      Our Team
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                    Ready to learn more about our work or explore partnership opportunities? We'd love to hear from you.
-                  </p>
-                </div>
 
-                <div className="space-y-6">
-                  {[
-                    { icon: MapPin, title: "Location", value: "Wakawaka Landing Site, Bugiri District, Uganda" },
-                    { icon: Phone, title: "Phone", value: "+256 XXX XXX XXX" },
-                    { icon: Mail, title: "Email", value: "info@waib.org" },
-                  ].map((contact, index) => (
-                    <div key={index} className="flex items-center space-x-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                      <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <contact.icon className="h-7 w-7 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-gray-900">{contact.title}</h4>
-                        <p className="text-gray-600">{contact.value}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={200}>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-green-200 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-                <div className="relative bg-white rounded-3xl shadow-2xl p-12 group-hover:scale-105 transition-transform duration-500">
-                  <h3 className="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">Visit Our Operations</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <Calendar className="h-6 w-6 text-blue-600" />
-                      <span className="text-gray-700">Monday - Friday: 8:00 AM - 5:00 PM</span>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <MapPin className="h-6 w-6 text-green-600" />
-                      <span className="text-gray-700">Wakawaka Landing Site, Lake Victoria</span>
-                    </div>
-                    <div className="pt-6">
-                      <Button className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white py-4 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                        <MapPin className="mr-2 h-5 w-5" />
-                        Schedule a Visit
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
 
       {/* Enhanced Call to Action */}
       <section className="py-32 relative overflow-hidden">

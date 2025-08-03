@@ -32,6 +32,7 @@ import ScrollReveal from "@/components/scroll-reveal"
 import GlassCard from "@/components/glass-card"
 import AnimatedCounter from "@/components/animated-counter"
 import FloatingElements from "@/components/floating-elements"
+import Link from "next/link"
 
 export default function ImpactPage() {
   const impactStats = [
@@ -268,29 +269,45 @@ export default function ImpactPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactStats.map((stat, index) => (
               <ScrollReveal key={index} delay={index * 150} direction="up">
                 <div className="relative group h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105" />
-                  <div className="relative p-8 text-center h-full flex flex-col">
-                    <div
-                      className={`w-24 h-24 bg-gradient-to-br from-${stat.color}-100 to-${stat.color}-200 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg`}
-                    >
-                      <stat.icon className={`h-12 w-12 text-${stat.color}-600`} />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-[1.02]" />
+                  <div className="relative p-5 text-center h-full flex flex-col">
+                    {/* Icon with subtle background */}
+                    <div className="flex items-center justify-center mb-3">
+                      <div
+                        className={`w-14 h-14 bg-gradient-to-br from-${stat.color}-100 to-${stat.color}-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-sm`}
+                      >
+                        <stat.icon className={`h-7 w-7 text-${stat.color}-600`} />
+                      </div>
                     </div>
-                    <div className={`text-5xl font-bold text-${stat.color}-600 mb-3`}>
+                    
+                    {/* Main value with compact display */}
+                    <div className={`text-3xl font-bold text-${stat.color}-600 mb-1`}>
                       <AnimatedCounter end={stat.value} suffix={stat.unit} />
                     </div>
-                    <h3 className="text-xl font-serif font-semibold text-gray-900 mb-3">{stat.label}</h3>
-                    <p className="text-gray-600 flex-grow">{stat.description}</p>
-                    <div className="mt-6">
-                      <div className={`inline-flex items-center px-4 py-2 bg-${stat.color}-50 rounded-full text-${stat.color}-700 font-semibold text-sm`}>
-                        <TrendingUp className="h-4 w-4 mr-2" />
-                        Growing Impact
+                    
+                    {/* Label with compact styling */}
+                    <h3 className="text-sm font-serif font-semibold text-gray-900 mb-1">{stat.label}</h3>
+                    
+                    {/* Description with reduced size */}
+                    <p className="text-xs text-gray-600 flex-grow mb-2">{stat.description}</p>
+                    
+                    {/* Compact trend indicator */}
+                    <div className="mt-auto">
+                      <div className={`inline-flex items-center px-2 py-1 bg-${stat.color}-50 rounded-full text-${stat.color}-700 font-medium text-xs`}>
+                        <ArrowUp className="h-3 w-3 mr-1" />
+                        Growing
                       </div>
                     </div>
                   </div>
+                  
+                  {/* Subtle accent border */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-${stat.color}-400 to-${stat.color}-500 rounded-t-2xl`}
+                  />
                 </div>
               </ScrollReveal>
             ))}
@@ -562,16 +579,7 @@ export default function ImpactPage() {
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group">
-                    <Target className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                    Join Our Vision
-                  </Button>
-                  <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 rounded-full transition-all duration-300 hover:scale-105">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    View Timeline
-                  </Button>
-                </div>
+
               </div>
             </ScrollReveal>
           </div>
@@ -771,12 +779,24 @@ export default function ImpactPage() {
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{action.title}</h3>
                     <p className="text-green-100 mb-4">{action.description}</p>
-                    <Button
-                      variant="outline"
-                      className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
-                    >
-                      {action.action}
-                    </Button>
+                    {action.action === "Partner Up" ? (
+                      <Link href="/partnerships">
+                        <Button
+                          variant="outline"
+                          className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
+                          asChild
+                        >
+                          <span>{action.action}</span>
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
+                      >
+                        {action.action}
+                      </Button>
+                    )}
                   </div>
                 ))}
               </div>
