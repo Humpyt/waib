@@ -195,8 +195,8 @@ export default function GalleryPage() {
       <FloatingElements />
       <Navbar />
 
-      {/* Hero Section - Enhanced */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Compact */}
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/02/Image_fx (17).jpg"
@@ -206,39 +206,18 @@ export default function GalleryPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-purple-800/90 to-green-800/95" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        </div>
-
-        {/* Floating Gallery Stats */}
-        <div className="absolute top-20 left-20 animate-float">
-          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
-            <div className="text-4xl font-bold">77+</div>
-            <div className="text-sm opacity-80">Photos</div>
-          </div>
-        </div>
-        <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: "1s" }}>
-          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
-            <div className="text-4xl font-bold">5</div>
-            <div className="text-sm opacity-80">Categories</div>
-          </div>
-        </div>
-        <div className="absolute bottom-40 left-32 animate-float" style={{ animationDelay: "2s" }}>
-          <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 text-white text-center">
-            <div className="text-4xl font-bold">2019</div>
-            <div className="text-sm opacity-80">Since</div>
-          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-6xl mx-auto text-white">
+          <div className="text-center max-w-3xl mx-auto text-white">
             <ScrollReveal>
-              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-8 py-4 text-lg font-semibold mb-8 rounded-full">
+              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-4 py-2 text-sm font-medium mb-4 rounded-full">
                 📸 Visual Journey
               </Badge>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <h1 className="text-6xl lg:text-9xl font-serif font-bold mb-8 leading-tight">
+              <h1 className="text-3xl lg:text-4xl font-serif font-bold mb-4 leading-tight">
                 Our Story in
                 <span className="block bg-gradient-to-r from-blue-300 via-purple-300 to-green-300 bg-clip-text text-transparent">
                   Pictures
@@ -247,37 +226,10 @@ export default function GalleryPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <p className="text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto mb-12">
+              <p className="text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto">
                 Explore the visual narrative of WAIB's transformative journey through powerful photographs that capture our milestones, community impact, and the faces behind our success.
               </p>
             </ScrollReveal>
-
-            <ScrollReveal delay={600}>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-xl"
-                >
-                  <Camera className="mr-3 h-6 w-6" />
-                  Explore Gallery
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 bg-transparent text-xl"
-                >
-                  <Download className="mr-3 h-6 w-6" />
-                  Download Media Kit
-                </Button>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>

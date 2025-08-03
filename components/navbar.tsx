@@ -66,27 +66,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className={`border-2 transition-all duration-300 hover:scale-105 ${
-                isScrolled
-                  ? "border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
-                  : "border-white/30 text-white hover:bg-white/10 bg-transparent backdrop-blur-sm"
-              }`}
-            >
-              Partner with Us
-            </Button>
-            <Button
-              className={`transition-all duration-300 hover:scale-105 ${
-                isScrolled
-                  ? "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800"
-                  : "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800"
-              }`}
-            >
-              Support Our Work
-            </Button>
-          </div>
+
 
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -117,17 +97,7 @@ export default function Navbar() {
                     </span>
                   </Link>
                 ))}
-                <div className="flex flex-col space-y-3 pt-6 border-t border-gray-200">
-                  <Button
-                    variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent transition-all duration-300 hover:scale-105"
-                  >
-                    Partner with Us
-                  </Button>
-                  <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-300 hover:scale-105">
-                    Support Our Work
-                  </Button>
-                </div>
+
               </div>
             </SheetContent>
           </Sheet>

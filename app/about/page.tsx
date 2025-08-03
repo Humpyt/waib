@@ -14,8 +14,8 @@ export default function AboutPage() {
       <FloatingElements />
       <Navbar />
 
-      {/* Hero Section - Enhanced */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Compact */}
+      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/02/Image_fx (5).jpg"
@@ -25,19 +25,18 @@ export default function AboutPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/85 to-green-800/90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto text-white">
+          <div className="text-center max-w-3xl mx-auto text-white">
             <ScrollReveal>
-              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-6 py-3 text-base font-semibold mb-8 rounded-full">
+              <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-4 py-2 text-sm font-medium mb-4 rounded-full">
                 🌊 About WAIB
               </Badge>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <h1 className="text-6xl lg:text-8xl font-serif font-bold mb-8 leading-tight">
+              <h1 className="text-3xl lg:text-4xl font-serif font-bold mb-4 leading-tight">
                 Empowering Women,
                 <span className="block bg-gradient-to-r from-blue-300 to-green-300 bg-clip-text text-transparent">
                   Transforming Lives
@@ -46,37 +45,10 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <p className="text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto mb-12">
+              <p className="text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto">
                 Discover the inspiring story behind WAIB's mission to empower women through sustainable aquaculture practices in Uganda's Bugiri District.
               </p>
             </ScrollReveal>
-
-            <ScrollReveal delay={600}>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <Heart className="mr-2 h-5 w-5" />
-                  Our Impact
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
-                >
-                  <ArrowRight className="mr-2 h-5 w-5" />
-                  Learn More
-                </Button>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
@@ -318,12 +290,6 @@ export default function AboutPage() {
                     </div>
                     <h3 className="text-3xl font-serif font-bold text-white mb-6">{item.title}</h3>
                     <p className="text-blue-100 leading-relaxed text-lg flex-grow">{item.description}</p>
-                    <div className="mt-8">
-                      <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r ${item.gradient} text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:scale-105`}>
-                        <CheckCircle className="h-5 w-5 mr-2" />
-                        <span className="font-semibold">Learn More</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -628,23 +594,7 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-12 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group text-xl"
-                >
-                  <Heart className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-                  Partner with Us
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-12 py-6 rounded-full transition-all duration-300 hover:scale-105 bg-transparent text-xl"
-                >
-                  <Globe className="mr-3 h-6 w-6" />
-                  Support Our Mission
-                </Button>
-              </div>
+
             </div>
           </ScrollReveal>
         </div>
