@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Fish className="h-5 w-5 text-green-400" />
-                <span className="text-gray-300">weeb.fish</span>
+                <span className="text-gray-300">waibug.com</span>
               </li>
             </ul>
           </div>
@@ -116,12 +116,17 @@ export default function Footer() {
               © {new Date().getFullYear()} WAIB - Women Aquaculture Initiative Bugiri. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </Link>
+              <span className="text-gray-400 text-sm">
+                Developed by{" "}
+                <Link
+                  href="https://cavemotions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400 hover:text-green-300 transition-colors"
+                >
+                  Cave Motions
+                </Link>
+              </span>
             </div>
           </div>
         </div>
