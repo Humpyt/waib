@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Fish, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Users, Award } from "lucide-react"
+import { Fish, Mail, MapPin, Users, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -15,29 +15,15 @@ export default function Footer() {
               <Image
                 src="/images/waib logo2.png"
                 alt="WAIB Logo"
-                width={60}
-                height={45}
-                className="h-12 w-auto brightness-0 invert"
+                width={80}
+                height={60}
+                className="h-16 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-gray-300 leading-relaxed">
               Empowering women through sustainable aquaculture in Bugiri District, Uganda. Transforming lives and
               communities through cage fish farming.
             </p>
-            <div className="flex space-x-4">
-              <Button size="icon" variant="ghost" className="text-gray-300 hover:text-white hover:bg-gray-800">
-                <Facebook className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="text-gray-300 hover:text-white hover:bg-gray-800">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="text-gray-300 hover:text-white hover:bg-gray-800">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="text-gray-300 hover:text-white hover:bg-gray-800">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -142,10 +128,6 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              
-              <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-2">
-                View Full Impact Report
-              </Button>
             </div>
           </div>
         </div>
@@ -156,7 +138,7 @@ export default function Footer() {
               © {new Date().getFullYear()} WAIB - Women Aquaculture Initiative Bugiri. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <span className="text-gray-400 text-sm">
+              <span className="text-gray-400 text-xs">
                 Developed by{" "}
                 <Link
                   href="https://cavemotions.com"

@@ -148,84 +148,150 @@ export default function HeroSlider() {
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-              {/* WAIB Logo */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10">
-                <Image
-                  src="/images/waib logo2.png"
-                  alt="WAIB Logo"
-                  width={400}
-                  height={400}
-                  className="w-auto h-auto max-h-[60vh] object-contain"
-                />
-              </div>
+              {/* WAIB Logo - Only show on first slide */}
+              {index === 0 && (
+                <div className="absolute right-1/4 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 opacity-80">
+                  <Image
+                    src="/images/waib logo2.png"
+                    alt="WAIB Logo"
+                    width={350}
+                    height={350}
+                    className="w-auto h-auto max-h-[50vh] object-contain"
+                  />
+                </div>
+              )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
-              {/* Content */}
+              {/* Content - Dynamic layout based on slide */}
               <div className="container mx-auto px-4 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-8 text-white">
-                    {/* Badge with Animation */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                      <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 transition-all duration-300">
-                        {slide.badge}
-                      </Badge>
-                    </div>
-
-                    {/* Headline */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-                      <h1 className="text-5xl lg:text-7xl font-serif font-bold leading-tight">
-                        {slide.headline.split(" ").map((word, i) => (
-                          <span
-                            key={i}
-                            className="inline-block mr-4 animate-slide-in-left"
-                            style={{ animationDelay: `${0.6 + i * 0.1}s` }}
-                          >
-                            {word}
-                          </span>
-                        ))}
-                      </h1>
-                    </div>
-
-                    {/* Tagline */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-                      <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl">{slide.tagline}</p>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "1s" }}>
-                      <div className="flex space-x-8">
-                        {slide.stats.map((stat, i) => (
-                          <div key={i} className="text-center">
-                            <div className="text-3xl font-bold text-blue-400">{stat.value}</div>
-                            <div className="text-sm text-gray-300">{stat.label}</div>
-                          </div>
-                        ))}
+                {index === 0 ? (
+                  // First slide layout (with logo)
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="space-y-8 text-white">
+                      {/* Badge with Animation */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                        <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 transition-all duration-300">
+                          {slide.badge}
+                        </Badge>
                       </div>
-                    </div>
 
-                    {/* CTAs */}
-                    <div className="animate-fade-in-up" style={{ animationDelay: "1.2s" }}>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <Button
-                          size="lg"
-                          className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                        >
-                          <slide.ctaIcon className="mr-2 h-5 w-5" />
-                          {slide.ctaText}
-                        </Button>
-                        <Button
-                          size="lg"
-                          variant="outline"
-                          className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
-                        >
-                          <slide.secondaryCtaIcon className="mr-2 h-5 w-5" />
-                          {slide.secondaryCtaText}
-                        </Button>
+                      {/* Headline */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                        <h1 className="text-5xl lg:text-7xl font-serif font-bold leading-tight">
+                          {slide.headline.split(" ").map((word, i) => (
+                            <span
+                              key={i}
+                              className="inline-block mr-4 animate-slide-in-left"
+                              style={{ animationDelay: `${0.6 + i * 0.1}s` }}
+                            >
+                              {word}
+                            </span>
+                          ))}
+                        </h1>
+                      </div>
+
+                      {/* Tagline */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+                        <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl">{slide.tagline}</p>
+                      </div>
+
+                      {/* Stats */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "1s" }}>
+                        <div className="flex space-x-8">
+                          {slide.stats.map((stat, i) => (
+                            <div key={i} className="text-center">
+                              <div className="text-3xl font-bold text-blue-400">{stat.value}</div>
+                              <div className="text-sm text-gray-300">{stat.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* CTAs */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "1.2s" }}>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <Button
+                            size="lg"
+                            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                          >
+                            <slide.ctaIcon className="mr-2 h-5 w-5" />
+                            {slide.ctaText}
+                          </Button>
+                          <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 bg-transparent"
+                          >
+                            <slide.secondaryCtaIcon className="mr-2 h-5 w-5" />
+                            {slide.secondaryCtaText}
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  // Creative layout for other slides (no logo)
+                  <div className="flex flex-col items-center justify-center text-center h-full">
+                    <div className="max-w-4xl space-y-8">
+                      {/* Badge */}
+                      <div className="animate-fade-in-up">
+                        <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 transition-all duration-300 text-lg px-6 py-2">
+                          {slide.badge}
+                        </Badge>
+                      </div>
+
+                      {/* Headline - Centered with creative typography */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                        <h1 className="text-6xl lg:text-8xl font-serif font-bold leading-tight">
+                          <span className="block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                            {slide.headline}
+                          </span>
+                        </h1>
+                      </div>
+
+                      {/* Tagline - Larger and more prominent */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+                        <p className="text-2xl lg:text-3xl text-gray-200 leading-relaxed max-w-3xl">
+                          {slide.tagline}
+                        </p>
+                      </div>
+
+                      {/* Stats - Horizontal layout with icons */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "0.9s" }}>
+                        <div className="flex flex-wrap justify-center gap-8">
+                          {slide.stats.map((stat, i) => (
+                            <div key={i} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                              <div className="text-4xl font-bold text-blue-400 mb-2">{stat.value}</div>
+                              <div className="text-lg text-gray-200">{stat.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* CTAs - Stacked vertically */}
+                      <div className="animate-fade-in-up" style={{ animationDelay: "1.2s" }}>
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                          <Button
+                            size="lg"
+                            className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-10 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg"
+                          >
+                            <slide.ctaIcon className="mr-3 h-6 w-6" />
+                            {slide.ctaText}
+                          </Button>
+                          <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 bg-white/5 text-lg"
+                          >
+                            <slide.secondaryCtaIcon className="mr-3 h-6 w-6" />
+                            {slide.secondaryCtaText}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

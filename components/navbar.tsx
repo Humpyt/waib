@@ -42,9 +42,9 @@ export default function Navbar() {
               <Image
                 src="/images/waib logo2.png"
                 alt="WAIB Logo"
-                width={60}
-                height={45}
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+                width={100}
+                height={75}
+                className="h-20 w-auto transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>

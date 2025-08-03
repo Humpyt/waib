@@ -38,7 +38,6 @@ export default function ProgramsPage() {
       beneficiaries: "1,400+ women",
       duration: "Ongoing since 2019",
       impact: "394.44 tons of fish produced",
-      stats: { completion: 95, satisfaction: 98 },
     },
     {
       title: "Day Care Services",
@@ -55,7 +54,6 @@ export default function ProgramsPage() {
       beneficiaries: "500+ children",
       duration: "Daily operations",
       impact: "Enables mothers to focus on work",
-      stats: { completion: 100, satisfaction: 96 },
     },
     {
       title: "Value Chain Capacity Building",
@@ -72,7 +70,6 @@ export default function ProgramsPage() {
       beneficiaries: "1,400+ women",
       duration: "Continuous training",
       impact: "Enhanced skills across value chain",
-      stats: { completion: 88, satisfaction: 94 },
     },
   ]
 
@@ -162,8 +159,8 @@ export default function ProgramsPage() {
 
                 <div className="grid grid-cols-3 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl">
-                    <div className="text-4xl font-bold text-teal-600 mb-2">98%</div>
-                    <div className="text-sm text-gray-600">Satisfaction Rate</div>
+                    <div className="text-4xl font-bold text-teal-600 mb-2">Holistic</div>
+                    <div className="text-sm text-gray-600">Approach</div>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl">
                     <div className="text-4xl font-bold text-blue-600 mb-2">1,400+</div>
@@ -178,21 +175,8 @@ export default function ProgramsPage() {
             </ScrollReveal>
           </div>
 
-          {/* Enhanced Program Tabs */}
+          {/* Current Programs - Enhanced Layout */}
           <Tabs defaultValue="current" className="w-full">
-            <div className="flex justify-center mb-20">
-              <TabsList className="w-full max-w-2xl bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl p-3 shadow-xl">
-                <TabsTrigger
-                  value="current"
-                  className="w-full rounded-2xl bg-gradient-to-r from-blue-600 to-teal-600 text-white py-4 px-6 text-lg font-semibold transition-all duration-300"
-                >
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Current Programs
-                </TabsTrigger>
-              </TabsList>
-            </div>
-
-            {/* Current Programs - Enhanced Layout */}
             <TabsContent value="current" className="space-y-20">
               <ScrollReveal>
                 <div className="text-center mb-20">
@@ -228,12 +212,6 @@ export default function ProgramsPage() {
                             <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">{program.title}</h3>
                             <p className="text-xl text-gray-600 leading-relaxed">{program.description}</p>
                           </div>
-                          <div className="text-right">
-                            <div className={`text-5xl font-bold text-${program.color}-600 mb-2`}>
-                              {program.stats.satisfaction}%
-                            </div>
-                            <div className="text-gray-600 font-medium">Satisfaction</div>
-                          </div>
                         </div>
 
                         <div className="grid lg:grid-cols-3 gap-12">
@@ -244,11 +222,11 @@ export default function ProgramsPage() {
                                 <CheckCircle className="h-6 w-6 text-green-600 mr-3" />
                                 Program Components
                               </h4>
-                              <div className="grid md:grid-cols-2 gap-4">
+                              <div className="grid md:grid-cols-2 gap-1">
                                 {program.details.map((detail, idx) => (
-                                  <div key={idx} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                                    <div className={`w-3 h-3 bg-${program.color}-500 rounded-full mt-2 flex-shrink-0`} />
-                                    <span className="text-gray-700 font-medium">{detail}</span>
+                                  <div key={idx} className="flex items-start space-x-2 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <div className={`w-2 h-2 bg-${program.color}-500 rounded-full mt-1.5 flex-shrink-0`} />
+                                    <span className="text-gray-700 font-medium text-sm">{detail}</span>
                                   </div>
                                 ))}
                               </div>
@@ -273,24 +251,6 @@ export default function ProgramsPage() {
 
                           {/* Program Stats & Info */}
                           <div className="space-y-8">
-                            <div className="grid grid-cols-1 gap-6">
-                              <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300" />
-                                <div className="relative p-6 text-center">
-                                  <div className={`text-4xl font-bold text-${program.color}-600 mb-2`}>
-                                    {program.stats.completion}%
-                                  </div>
-                                  <div className="text-gray-600 font-medium">Completion Rate</div>
-                                  <div className={`w-full bg-gray-200 rounded-full h-2 mt-3`}>
-                                    <div
-                                      className={`h-2 bg-gradient-to-r from-${program.color}-400 to-${program.color}-500 rounded-full transition-all duration-1000`}
-                                      style={{ width: `${program.stats.completion}%` }}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
                             <div className="space-y-6">
                               <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-2xl">
                                 <Users className="h-8 w-8 text-blue-600" />
