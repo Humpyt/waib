@@ -17,7 +17,7 @@ export default function Footer() {
                 alt="WAIB Logo"
                 width={80}
                 height={60}
-                className="h-16 w-auto brightness-0 invert"
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-gray-300 leading-relaxed">

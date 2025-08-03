@@ -446,7 +446,7 @@ export default function ContactPage() {
                 <Button
                   variant="outline"
                   onClick={() => handleContactAction("Call Now")}
-                  className="border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  className="border-blue-400 text-blue-400 hover:bg-blue-500/10 backdrop-blur-sm px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl transition-all duration-300 text-sm sm:text-base"
                 >
                   <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Call Us Now
