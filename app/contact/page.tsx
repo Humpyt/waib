@@ -15,10 +15,55 @@ import FloatingElements from "@/components/floating-elements"
 import Link from "next/link"
 
 function ContactForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle form submission here
-    alert('Thank you for your message! We will get back to you within 24 hours.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      organization: formData.get('organization'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    }
+
+    try {
+      // Send email using mailto for direct email submission
+      const emailBody = `
+Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Organization: ${data.organization || 'N/A'}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+      `.trim()
+
+      const mailtoLink = `mailto:weebultd@gmail.com?subject=${encodeURIComponent(
+        `WAIB Contact Form: ${data.subject}`
+      )}&body=${encodeURIComponent(emailBody)}`
+
+      window.location.href = mailtoLink
+      setSubmitStatus('success')
+      
+      // Reset form after a delay
+      setTimeout(() => {
+        e.currentTarget.reset()
+        setSubmitStatus('idle')
+      }, 2000)
+      
+    } catch (error) {
+      console.error('Error sending message:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -27,6 +72,7 @@ function ContactForm() {
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700">First Name *</label>
           <Input
+            name="firstName"
             required
             placeholder="Your first name"
             className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
@@ -35,6 +81,7 @@ function ContactForm() {
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700">Last Name *</label>
           <Input
+            name="lastName"
             required
             placeholder="Your last name"
             className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
@@ -45,6 +92,7 @@ function ContactForm() {
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">Email Address *</label>
         <Input
+          name="email"
           type="email"
           required
           placeholder="your.email@example.com"
@@ -55,6 +103,7 @@ function ContactForm() {
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">Organization (Optional)</label>
         <Input
+          name="organization"
           placeholder="Your organization name"
           className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
         />
@@ -63,6 +112,7 @@ function ContactForm() {
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">Subject *</label>
         <Input
+          name="subject"
           required
           placeholder="What is this regarding?"
           className="border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-emerald-500 rounded-xl py-3 px-4 transition-all duration-300 text-sm sm:text-base"
@@ -72,6 +122,7 @@ function ContactForm() {
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">Message *</label>
         <Textarea
+          name="message"
           required
           placeholder="Tell us more about your inquiry or how you'd like to get involved..."
           rows={4}
@@ -79,12 +130,38 @@ function ContactForm() {
         />
       </div>
 
+      {submitStatus === 'success' && (
+        <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+          <p className="text-emerald-700 font-medium text-center">
+            ✓ Message prepared! Your email client will open to send the message to weebultd@gmail.com
+          </p>
+        </div>
+      )}
+
+      {submitStatus === 'error' && (
+        <div className="p-4 bg-red-50 rounded-xl border border-red-200">
+          <p className="text-red-700 font-medium text-center">
+            ✗ There was an error preparing your message. Please try again or email us directly at weebultd@gmail.com
+          </p>
+        </div>
+      )}
+
       <Button
         type="submit"
-        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 group text-sm sm:text-base"
+        disabled={isSubmitting}
+        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 group text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
-        Send Message
+        {isSubmitting ? (
+          <>
+            <div className="mr-2 h-4 w-4 sm:h-5 sm:w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+            Preparing Email...
+          </>
+        ) : (
+          <>
+            <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            Send Message to weebultd@gmail.com
+          </>
+        )}
       </Button>
 
       <div className="text-center p-3 sm:p-4 bg-emerald-50 rounded-xl border border-emerald-100">

@@ -168,9 +168,19 @@ export default function HomePage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-green-50/50" />
-        <div className="container mx-auto px-4 relative">
+      <section className="py-32 relative overflow-hidden">
+        {/* Background image overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/SliderImages/Image_fx (3).jpg"
+            alt="Women in Aquaculture Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-green-900/70 to-teal-900/80" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="left">
               <div className="relative group">
@@ -183,9 +193,9 @@ export default function HomePage() {
                   className="rounded-3xl shadow-2xl relative z-10 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute -bottom-8 -right-8 z-20">
-                  <GlassCard className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600">5+</div>
-                    <div className="text-sm text-gray-600">Years Impact</div>
+                  <GlassCard className="p-6 text-center bg-white/20 backdrop-blur-sm border-white/30">
+                    <div className="text-2xl font-bold text-white">5+</div>
+                    <div className="text-sm text-gray-200">Years Impact</div>
                   </GlassCard>
                 </div>
               </div>
@@ -193,52 +203,52 @@ export default function HomePage() {
 
             <ScrollReveal direction="right" delay={200}>
               <div className="space-y-8">
-                <div>
-                  <Badge className="bg-gradient-to-r from-blue-100 to-green-100 text-blue-800 border-0 px-4 py-2 mb-6">
-                    Our Mission
-                  </Badge>
-                  <h2 className="text-responsive-2xl font-serif font-bold text-gray-900 mb-6 leading-tight">
-                    Empowering Women Through
-                    <span className="text-gradient block">Sustainable Aquaculture</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                    To increase women economic empowerment through cage fish farming and create market linkages through
-                    increased partnerships, transforming poor rural women from vulnerability to economic empowerment.
-                  </p>
-                </div>
+              <div>
+                <Badge className="bg-gradient-to-r from-blue-100 to-green-100 text-blue-800 border-0 px-4 py-2 mb-6">
+                  Our Mission
+                </Badge>
+                <h2 className="text-responsive-2xl font-serif font-bold text-white mb-6 leading-tight">
+                  Empowering Women Through
+                  <span className="text-white block">Sustainable Aquaculture</span>
+                </h2>
+                <p className="text-lg text-gray-200 leading-relaxed mb-8">
+                  To increase women economic empowerment through cage fish farming and create market linkages through
+                  increased partnerships, transforming poor rural women from vulnerability to economic empowerment.
+                </p>
+              </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <GlassCard className="p-6 group">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Target className="h-6 w-6 text-green-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-serif font-bold text-gray-900 mb-2">Our Goal</h4>
-                        <p className="text-gray-600 text-sm">
-                          Women have income security, decent work and economic autonomy by 2025
-                        </p>
-                      </div>
+                <GlassCard className="p-6 group bg-white/10 backdrop-blur-sm border-white/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Target className="h-6 w-6 text-green-600" />
                     </div>
-                  </GlassCard>
+                    <div>
+                      <h4 className="font-serif font-bold text-white mb-2">Our Goal</h4>
+                      <p className="text-gray-200 text-sm">
+                        Women have income security, decent work and economic autonomy by 2025
+                      </p>
+                    </div>
+                  </div>
+                </GlassCard>
 
-                  <GlassCard className="p-6 group">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Waves className="h-6 w-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-serif font-bold text-gray-900 mb-2">Our Vision</h4>
-                        <p className="text-gray-600 text-sm">
-                          Center of excellence for women's aquaculture empowerment by 2030
-                        </p>
-                      </div>
+                <GlassCard className="p-6 group bg-white/10 backdrop-blur-sm border-white/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Waves className="h-6 w-6 text-blue-600" />
                     </div>
-                  </GlassCard>
-                </div>
+                    <div>
+                      <h4 className="font-serif font-bold text-white mb-2">Our Vision</h4>
+                      <p className="text-gray-200 text-sm">
+                        Center of excellence for women's aquaculture empowerment by 2030
+                      </p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </div>
 
                 <Link href="/about">
-                  <Button className="btn-modern group" asChild>
+                  <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group mt-8" asChild>
                     <span className="flex items-center">
                       Learn More About Us
                       <Target className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />

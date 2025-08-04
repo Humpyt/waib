@@ -16,7 +16,11 @@ export const metadata: Metadata = {
     "Empowering women through sustainable aquaculture in Bugiri District, Uganda. Transforming lives and communities through cage fish farming.",
   keywords:
     "women empowerment, aquaculture, fish farming, Uganda, Bugiri, sustainable development, economic empowerment",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: '/images/waib-logo.png',
+    apple: '/images/waib-logo.png',
+  }
 }
 
 export default function RootLayout({
