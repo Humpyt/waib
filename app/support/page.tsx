@@ -204,12 +204,12 @@ export default function SupportPage() {
               <div className="text-sm text-gray-600">Tons Fish Produced</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">1,000</div>
-              <div className="text-sm text-gray-600">Women Paid Dividends</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">15</div>
+              <div className="text-sm text-gray-600">Permanent Jobs Created</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">UGX 100K</div>
-              <div className="text-sm text-gray-600">Average Dividend</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">500</div>
+              <div className="text-sm text-gray-600">Rotational Jobs Created</div>
             </div>
           </div>
         </div>

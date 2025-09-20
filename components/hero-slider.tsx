@@ -37,8 +37,8 @@ const slides = [
     backgroundImage: "/images/02/Image_fx%20(2).jpg",
     badge: "Community Impact",
     stats: [
-      { value: "1,000", label: "Women Paid Dividends" },
-      { value: "UGX 100K", label: "Average Dividend" },
+      { value: "15", label: "Permanent Jobs Created" },
+      { value: "500", label: "Rotational Jobs Created" },
     ],
   },
   {

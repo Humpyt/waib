@@ -47,19 +47,19 @@ export default function ImpactPage() {
     { icon: Users, value: 1400, unit: "+", label: "Women Targeted", color: "green", description: "Lives transformed" },
     {
       icon: DollarSign,
-      value: 1000,
+      value: 15,
       unit: "",
-      label: "Women Paid Dividends",
+      label: "Permanent Jobs Created",
       color: "teal",
-      description: "Economic empowerment",
+      description: "Sustainable employment",
     },
     {
       icon: TrendingUp,
-      value: 100,
-      unit: "K",
-      label: "Average Dividend (UGX)",
+      value: 500,
+      unit: "",
+      label: "Rotational Jobs Created",
       color: "purple",
-      description: "Financial independence",
+      description: "Economic opportunities",
     },
   ]
 

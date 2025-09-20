@@ -155,7 +155,7 @@ export default function AboutPage() {
               {
                 year: "2021",
                 title: "First Harvest Success",
-                description: "Achieved 394.44 tons of fish production and began dividend payments to beneficiaries.",
+                description: "Achieved 394.44 tons of fish production and created sustainable employment opportunities for the community.",
                 icon: Fish,
                 color: "teal",
                 side: "left",
@@ -324,7 +324,7 @@ export default function AboutPage() {
               {[
                 { value: "1,400+", label: "Women Empowered", icon: Users, color: "blue" },
                 { value: "394.44", label: "Tons Fish Produced", icon: Fish, color: "green" },
-                { value: "UGX 100K", label: "Average Dividend", icon: TrendingUp, color: "teal" },
+                { value: "515", label: "Total Jobs Created", icon: TrendingUp, color: "teal" },
                 { value: "100%", label: "Success Rate", icon: Star, color: "purple" },
               ].map((stat, index) => (
                 <div key={index} className="relative group">
@@ -354,7 +354,7 @@ export default function AboutPage() {
               {
                 icon: Users,
                 title: "Poverty Alleviation",
-                description: "Families moved from subsistence living to sustainable livelihoods with regular dividend payments.",
+                description: "Families moved from subsistence living to sustainable livelihoods with regular employment opportunities.",
                 color: "green",
                 highlight: "Average household income increased by 300%"
               },
